@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Style/styleGifS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'> 
+    <title>videoGifOS</title>
+
+</head>
+<body>
+    <section class="contenedor-barra-video">
+    </section>
+    <header class="header-video" id="header">
+        <div class="contenedor-header-video"> 
+            <a href="index.html" class="contenedor-logo-video">
+                <img src="./Img/arrow.svg" alt="logo-arrow"> 
+                <img src="./Img/gifOF_logo_lightmode.png" alt="logo-gifos" id="logo">                
+            </a>
+        </div>    
+    </header>
+
+    <section class="contenedor-seccion-video contenedor-seccion-video-hide" id="contenedor-seccion-video-general">
+        <div class="crear-gifos-intro" id="intro-gifos">
+            <h2 class="gradiente-encabezado">Crea Gifos</h2>
+            <div class="crear-gif-readme">
+                <div class="titulo-readme">
+                    <img src="./Img/window_img.png" alt="img-window">
+                    <strong>Aqui podras crear tus propios guifos</strong>
+                </div>
+                <figure class="descripcion-readme">
+                    <p>Crea tu <strong class="italic">guifo </strong>es muy fácil, grba cualquier  imgagen con tu cámara y obten guifos personalizados. Los pasos para crear tu guifo son:</p>
+                    <ol>
+                        <li><strong>1)</strong>
+                            Dar permiso de acceso a la cámara (sólo por el tiempo de uso)
+                        </li>
+                        <li><strong>2)</strong>
+                            Captar tu momento guifo
+                        </li>
+                        <li><strong>3)</strong>
+                            Revisar el momento
+                        </li>
+                        <li><strong>4)</strong>
+                            Listo para subir y compartir!
+                        </li>
+                    </ol><br>
+                    <p>¿Quieres comenzar a crear tu <strong class="italic">  guifo </strong>ahora?</p>
+                    <div class="crear-gifs-contenedor-botones">
+                        <input placeholder="Cancelar" class="boton-crear-gif" id="boton-cancelar-gif">
+                        <input placeholder="Comenzar" class="boton-crear-gif rosa" id="boton-comenzar-gif">
+                    </div>
+                </figure>
+            </div>
+        </div>
+
+        <div class="contenedor-video" id="contenedor-de-video">
+            <div class="contenedor-barra video"></div>
+            <video id="video" class="pantalla-video"></video> 
+            <img src="./Img/globe_img.png" height="400" width="400" alt="no-video-preview" id="preview" class="pantalla-preview">
+            
+            <div class="contenedor-gif-subido" id="contenedor-subidos">
+                <img src="./Img/globe_img.png" alt="globe-img"><br>
+                <h2>Estamos Subiendo tu guifo...</h2>
+                <progress value="0" max="100" class="progress" id="upload-progress"></progress>
+                <h3 class="output-de-subida" id="output-subida-api"></h3>
+            </div>
+                        
+            <section class="gifo-creado-exitasamente" id="contenedor-gifo-creado-exitosamente">
+                <input type="text" id="url-gif-subido" class="input-copiado-de-url-portapapeles" value="url">
+                <span class="mensaje-de-gif-copiado" id="mensaje-copiado"></span>
+                <div class="contenedor-preview-gif-subido">
+                    <img src="./Img/globe_img.png" height="50" width="250" alt="no-video-preview" id="preview-subido-exitosamente">
+                </div>
+                <div class="contenedor-botones-gif-subido">
+                    <h3>Guifo creado con exito</h3>
+                    <button class="boton-crear-gif boton-gif-subido copiar-enlace" id="boton-copiar-enlace">Copiar enlace de descarga</button>
+                    <button class="boton-crear-gif boton-gif-subido" id="descargar-gif" >Descargar Guifo</button>
+                    <button class="boton-crear-gif rosa listo" id="boton-gif-creado-listo">Listo</button>
+                </div>
+            </section>
+            
+            <div class="contenedor-botones-video" id="contenedor-de-botones-para-video">
+                <div id="clock" class="boton btn-video timer">00h:00m:00s</div> 
+
+                <button type="button" id="boton-camara" class="boton btn-video boton-mini">
+                    <img src="./Img/gifOF_camera_lightmode.svg" alt="camara" id="img-camara">
+                </button>
+
+                <button type="button" id="boton-recording" class="boton btn-video boton-mini">
+                    <img src="./Img/recording_lightmode.svg" alt="recording" id="img-recording">
+                </button>
+
+                <button disabled type="button" id="rec" class="boton-crear-gif rosa">Captura</button><br>  
+                <button type="button" id="stop" class="boton-crear-gif rosa">Listo/Preview</button> 
+               
+                <button type="button" id="repetir" class="boton-crear-gif rosa">Repetir</button>
+                <button type="button" id="subir" class="boton-crear-gif rosa">Subir</button>
+            </div>
+            <div class="contenedor-botones-video"  id="contenedor-de-boton-cancelar">
+                <button class="boton-crear-gif" id="cancelar">Cancelar</button>
+            </div>
+        </div>        
+    </section>
+
+        <form class="contenedor-input-sugerencias" id="form-gif-creados">
+            <input type="text" placeholder="Mis Guifos"  id="input-mis-gifs" disabled>
+        </form>
+        <div class="contenedor-de-guifos" id="contenedor-mis-gifs"></div>    
+ 
+
+   
+
+   
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="./JS/video.js"></script> 
+    <script src="./js/theme.js"></script>
+    <!-- <script src="./JS/timer.js"></script>  -->
+</body>
+</html>

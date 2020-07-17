@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Style/styleGifS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'> 
+    <title>gifOS</title>
+</head>
+<body>
+    <section class="contenedor-barra">
+    </section>
+    <header>
+        <div class="contenedor-header"> 
+           <div class="contenedor-logo">
+                <img src="./Img/gifOF_logo_lightmode.png" alt="logo-gifos" class="lightmode" id="logo">
+            </div>
+            <nav class="contenedor-de-botones">
+                <form class="contenedor-boton-crear-gif" action="video.html">
+                    <input type="submit" value="Crear Guifos" class="boton"/>
+                    <input type="hidden" name="a" value="0">
+                </form>               
+                <div class="contenedor-de-btns-anidados">
+                    <button class="boton">Elegir temas</button>    
+                        <button class="boton-mini boton" id="btn-elegir">
+                            <i class="fas fa-sort-down"></i> 
+                        </button>                    
+                    <div class="btns-anidados" id="menu-oculto">                        
+                        <button class="boton anidado" id="dark-mode-toggle">Dark Mode</button>
+                        <button class="boton anidado" id="light-mode-toggle">Light Mode</button>
+                    </div>
+                </div>            
+                <a href="javascript:void(0)" id="boton-mis-gifs">Mis Gifos</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="seccion-busqueda">
+        <div class="contenedor-busqueda">
+            <div class="barra-busqueda" id="contenedor-de-form">
+                <h2 class="contenedor-barra busqueda"></h2>
+                <form id="form-busqueda">
+                    <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" id="input-busqueda">
+                    <button type="submit" id="btn-busqueda" value="enviar"><img src="./Img/lupa_lightmode.svg" alt="lupa-img" id="img-lupa">Buscar</button> 
+                </form>    
+            </div>
+        </div>    
+    </section>
+    <section class="barra-de-busqueda-sugerencias" id="contenedor-sugerencias-busqueda">
+        <div class="seccion-contenedor-botones-sugeridos">
+            <div class="contenedor-botones-sugeridos" id="botones-de-query">
+            </div>
+        </div>
+        <div class="contenedor-sugerencia-de-busquedas" id="contenedor-de-sugerencias-div"> 
+
+        </div>    
+    </section>
+    <section class="seccion-sugerencias" id="contenedor-seccion-de-sugarencias">
+        <form class="contenedor-input-sugerencias">
+            <input type="text" placeholder="Hoy te sugerimos" class="input-sugerencias">
+        </form>
+        <div class="contenedor-de-guifos" id="contenedor-de-sugerencias">
+
+        </div>
+    </section>
+    <section class="contenedor-tendencias-busqueda">
+        <form class="contenedor-input-sugerencias">
+            <input type="text" placeholder="Tendencias" id="input-tendencias">
+        </form>
+    </section>
+    <div class="contenedor-de-guifos" id="contenedor-gifs">
+
+    </div>   
+    <script src="./JS/gifos.js"></script>
+</body>
+</html>
+
+
