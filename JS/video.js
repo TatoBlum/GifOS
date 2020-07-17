@@ -104,7 +104,7 @@ function upLoad () {
 
     try {    
         const apiKey = 'f63OA264yWE8KJ61Ss6iaXUh84uGBnyA';
-        xhr.open('POST', `http://upload.giphy.com/v1/gifs?api_key=${apiKey}`);
+        xhr.open('POST', `https://upload.giphy.com/v1/gifs?api_key=${apiKey}`);
         xhr.send(form);
     }
     catch (error){
