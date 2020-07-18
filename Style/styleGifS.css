@@ -776,7 +776,8 @@ i.fas.fa-search {
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  color: var(--fnt-color);
+  background: var(--clr-background-box-gris);
+  /* color: var(--fnt-color); */
 }
 
 .boton-crear-gif::-webkit-input-placeholder {
