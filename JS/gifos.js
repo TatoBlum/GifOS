@@ -448,7 +448,7 @@ function getLupaActive () {
         });
         botonContenedorLupa.addEventListener('mouseleave', imgSegunTheme); 
         botonContenedorLupa.addEventListener('mouseleave', function () {
-            botonContenedorLupa.style.background = '#E6E6E6';            
+            botonContenedorLupa.style.background = 'var(--clr-background-box-gris)';            
         });
           
     })
