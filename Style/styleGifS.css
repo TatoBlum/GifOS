@@ -354,7 +354,7 @@ i.fas.fa-search {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: var(--clr-background-box-gris) !important;
+  background: var(--clr-background-box-gris);
   color: var(--clr-boton-buscar);
   border: 1px solid #808080;
   -webkit-box-shadow: var(--clr-box-shadow-boton-gris);
