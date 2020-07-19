@@ -83,7 +83,7 @@ function upLoad () {
 
         gifSubido = xhr.response;
         idGifSubido = gifSubido.data.id;
-        console.log(gifSubido);
+        //console.log(gifSubido);
         let array = [];
         let items = localStorage.getItem("mis_gifs");
         if (items != null) {
@@ -228,10 +228,10 @@ function getGifSubido() {
         return response.json();
     })
     .then( result => {
-        console.log(result);
+        //console.log(result);
         urlValue = result.data.embed_url;
         inputUrl.value = urlValue;
-        console.log(urlValue);
+        //console.log(urlValue);
     }) 
     .catch(  error => {
         console.log(error.message)
@@ -301,26 +301,25 @@ function getMisGuifos() {
     let array = [];
     getLocalStoraGifs.forEach(element => {
         let idsGif = element.data.id;
-        console.log(idsGif);
+        //console.log(idsGif);
         array.push(idsGif);
     });
     let arrayDeIdsStringi = JSON.stringify(array);
     let ararrayIdsGif = arrayDeIdsStringi.replace(/\"/g, "");
     let arrayIdGifPuro = ararrayIdsGif.substring(1, ararrayIdsGif.length-1);
-    console.log(arrayIdGifPuro);
+    //console.log(arrayIdGifPuro);
 
     const apikey = 'f63OA264yWE8KJ61Ss6iaXUh84uGBnyA';
     fetch(`https://api.giphy.com/v1/gifs?api_key=${apikey}&ids=${arrayIdGifPuro}`)
     .then( response => {
-        console.log(response);
+        //console.log(response);
         return response.json();
     })
     .then (result =>{
-        console.log(result);
+        //console.log(result);
         let resultHtml = '';
     
         result.data.forEach( function(element){
-            console.log(element);
             let gifUrl = element.images.original.url;
             let gifAlt = element.title;
 
@@ -341,7 +340,6 @@ function getMisGuifos() {
 }
 
 let botonGifListo = document.getElementById('boton-gif-creado-listo');
-console.log(botonGifListo);
 
 botonGifListo.addEventListener('click',gifCreadoListo);
 
