@@ -1,5 +1,6 @@
 // TRAER GIFS DE API 
 
+
 let form = document.getElementById('form-busqueda');
 let inputDeBusqueda = document.getElementById('input-busqueda');
 let contenedorDeGifs = document.getElementById('contenedor-gifs');
