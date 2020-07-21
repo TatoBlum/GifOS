@@ -1,6 +1,5 @@
 // TRAER GIFS DE API 
 
-
 let form = document.getElementById('form-busqueda');
 let inputDeBusqueda = document.getElementById('input-busqueda');
 let contenedorDeGifs = document.getElementById('contenedor-gifs');
@@ -108,7 +107,7 @@ inputDeBusqueda.addEventListener('input', function (event) {
 function buscarGifs(getSearch) {
     //console.log(getSearch); //ingreso datos a input
     const apiKey = 'f63OA264yWE8KJ61Ss6iaXUh84uGBnyA';
-    const url = `http://api.giphy.com/v1/tags/related/${getSearch}?key=${apiKey}`;
+    const url = `https://api.giphy.com/v1/tags/related/${getSearch}?key=${apiKey}`;
 
     fetch(url)
         .then(response =>{
@@ -314,7 +313,7 @@ gifSugerencias();
 // GIF TENDENCIAS
 function gifTenencias() {
     const apiKey = 'f63OA264yWE8KJ61Ss6iaXUh84uGBnyA';
-    const url = `http://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=24&rating=G`;
+    const url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=24&rating=G`;
     fetch(url)
         .then( response=> {
             return response.json();
