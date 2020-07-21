@@ -98,7 +98,10 @@ inputDeBusqueda.addEventListener('input', function (event) {
     contenedorSugerencias.style.visibility = 'visible';
     contenedorSeccionDeSugerencias.style.top ='20px'
     const getSearch = inputDeBusqueda.value;
-     if (getSearch != '') {
+    if (getSearch.length == 0) {
+        contenedorSugerencias.innerHTML = '';
+    }
+    if (getSearch != '') {
         buscarGifs(getSearch)
     } 
 })
