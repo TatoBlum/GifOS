@@ -18,6 +18,14 @@ var formMisGifs = document.getElementById('form-gif-creados');
 var hd = document.getElementById('header');
 var botonCancelarUpload = document.getElementById('cancelar');
 var contenedorBotonCancelar = document.getElementById('contenedor-de-boton-cancelar');
+var botonRecording = document.getElementById('boton-recording');
+var botonCamara = document.getElementById('boton-camara');
+var contenedorBotonesTheme = document.getElementById('contenedor-botones-theme');
+var misGifsLink = document.getElementById('boton-mis-gifs');
+
+misGifsLink.style.display = 'none';
+contenedorBotonesTheme.style.display = 'none';
+botonRecording.style.display = 'none';
 botonCancelarUpload.style.display= 'none';
 contenedorBotonCancelar.style.display = 'none';
 
@@ -28,7 +36,21 @@ if(window.location.search == "?a=0") {
 
 if(window.location.search == "?a=1") {
     hd.style.marginBottom = '30px';
+    contenedorBotonesTheme.style.display = 'flex';
+    contenedorBotonesTheme.style.marginRight = '25px';
+    misGifsLink.style.display = 'flex';
 }
+
+var botonRec = document.getElementById("rec");
+botonRec.addEventListener('click', function () {
+    botonCamara.style.display = 'none';
+    botonRecording.style.display = 'flex';    
+})
+
+var botonStop = document.getElementById("stop");
+botonStop.addEventListener('click', function () {
+    botonRecording.style.display = 'none';
+})
 
 botonStop.onclick = function () {
     recorder.stopRecording();

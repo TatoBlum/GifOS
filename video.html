@@ -11,15 +11,34 @@
 </head>
 <body>
     <section class="contenedor-barra-video">
-    </section>
-    <header class="header-video" id="header">
-        <div class="contenedor-header-video"> 
-            <a href="index.html" class="contenedor-logo-video">
-                <img src="./Img/arrow.svg" alt="logo-arrow"> 
-                <img src="./Img/gifOF_logo_lightmode.png" alt="logo-gifos" id="logo">                
-            </a>
-        </div>    
-    </header>
+    </section>    
+            <header class="header-video" id="header">
+                <div class="contenedor-header"> 
+                    <div class="contenedor-header-video"> 
+                        <a href="index.html" class="contenedor-logo-video">
+                            <img src="./Img/arrow.svg" alt="logo-arrow"> 
+                            <img src="./Img/gifOF_logo_lightmode.png" alt="logo-gifos" id="logo">                
+                        </a>
+                    </div> 
+                    <nav class="contenedor-de-botones" id="contenedor-botones-theme">
+                        <form class="contenedor-boton-crear-gif" action="video.html">
+                            <input type="submit" value="Crear Guifos" class="boton"/>
+                            <input type="hidden" name="a" value="0">
+                        </form>               
+                        <div class="contenedor-de-btns-anidados" id="contenedor-btns-themes">
+                            <button class="boton">Elegir temas</button>    
+                                <button class="boton-mini boton" id="btn-elegir">
+                                    <i class="fas fa-sort-down"></i> 
+                                </button>                    
+                            <div class="btns-anidados" id="menu-oculto">                        
+                                <button class="boton anidado" id="dark-mode-toggle">Dark Mode</button>
+                                <button class="boton anidado" id="light-mode-toggle">Light Mode</button>
+                            </div>
+                        </div>            
+                    </nav>
+                    <a href="javascript:void(0)" id="boton-mis-gifs" class="link-mis-gifos">Mis Gifos</a>
+                </div>    
+            </header>
 
     <section class="contenedor-seccion-video contenedor-seccion-video-hide" id="contenedor-seccion-video-general">
         <div class="crear-gifos-intro" id="intro-gifos">
@@ -106,15 +125,13 @@
         <form class="contenedor-input-sugerencias" id="form-gif-creados">
             <input type="text" placeholder="Mis Guifos"  id="input-mis-gifs" disabled>
         </form>
-        <div class="contenedor-de-guifos" id="contenedor-mis-gifs"></div>    
+        <div class="contenedor-de-guifos-creados" id="contenedor-mis-gifs"></div>    
  
 
-   
 
    
     <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="./JS/video.js"></script> 
-    <script src="./js/theme.js"></script>
-    <!-- <script src="./JS/timer.js"></script>  -->
+    <script src="./JS/theme.js"></script>
 </body>
 </html>

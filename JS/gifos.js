@@ -9,6 +9,8 @@ let contenedorDeSugarencias = document.getElementById('contenedor-de-sugerencias
 let botonesVerMas;
 let inputTendencia = document.getElementById('input-tendencias');
 let inputSugeridos = document.getElementById('input-sugeridos');
+let botonContenedorLupa = document.getElementById('btn-busqueda');   
+
 
 
 form.addEventListener('submit', function (event) {
@@ -105,7 +107,7 @@ inputDeBusqueda.addEventListener('input', function (event) {
 function buscarGifs(getSearch) {
     //console.log(getSearch); //ingreso datos a input
     const apiKey = 'f63OA264yWE8KJ61Ss6iaXUh84uGBnyA';
-    const url = `https://api.giphy.com/v1/tags/related/${getSearch}?key=${apiKey}`;
+    const url = `http://api.giphy.com/v1/tags/related/${getSearch}?key=${apiKey}`;
 
     fetch(url)
         .then(response =>{
@@ -311,7 +313,7 @@ gifSugerencias();
 // GIF TENDENCIAS
 function gifTenencias() {
     const apiKey = 'f63OA264yWE8KJ61Ss6iaXUh84uGBnyA';
-    const url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=24&rating=G`;
+    const url = `http://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=24&rating=G`;
     fetch(url)
         .then( response=> {
             return response.json();
@@ -450,6 +452,19 @@ function getLupaActive () {
         botonContenedorLupa.addEventListener('mouseleave', function () {
             botonContenedorLupa.style.background = 'var(--clr-background-box-gris)';            
         });
+
+        inputDeBusqueda.addEventListener('input', function (e) {
+            if (e.target.value.length >= 1) {
+                botonContenedorLupa.style.background = '#F7C9F3';  
+                let lupa = botonContenedorLupa.firstChild;
+                var objectURL = URL.createObjectURL(miBlob);
+                lupa.src = objectURL; 
+            } else {
+                botonContenedorLupa.style.background = 'var(--clr-background-box-gris)';
+                imgSegunTheme();
+            }
+
+        });
           
     })
     .catch(  error => {
@@ -459,9 +474,9 @@ function getLupaActive () {
 
 getLupaActive();
 
+
 function imgSegunTheme() {
     let theme = document.body.getAttribute('class');
-    //let camara = document.getElementById('img-camara');
     let logo = document.getElementById('logo');
     let lupa = document.getElementById('img-lupa');
 
@@ -485,7 +500,6 @@ function imgSegunTheme() {
 }
 
 imgSegunTheme();
-
 
 inputTendencia.readOnly = true;
 inputTendencia.style.color = 'grey';

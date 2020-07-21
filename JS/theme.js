@@ -1,3 +1,21 @@
+// MENU THEMES & BUTONS (DARK/LIGHT) 
+
+var botonTheme = document.getElementById('btn-elegir');
+var contenedorTheme = document.getElementById('menu-oculto');
+ 
+botonTheme.addEventListener( 'click', (e) => {
+    try{
+        if(contenedorTheme.style.display === "none") {
+            contenedorTheme.style.display = "flex";
+        } else {
+            contenedorTheme.style.display = "none";
+        }
+    }
+    catch (error){
+        console.log(error);
+    }
+})
+
 // THEME (LIGHT / DARK) 
 // check for saved 'darkMode' in localStorage
 
@@ -42,22 +60,26 @@ if (lightMode === 'enabled') {
     enableLightMode();
 }
 
-let botonRecording = document.getElementById('boton-recording');
-let botonCamara = document.getElementById('boton-camara');
-
-botonRecording.style.display = 'none';
-
-var botonRec = document.getElementById("rec");
-botonRec.addEventListener('click', function () {
-    botonCamara.style.display = 'none';
-    botonRecording.style.display = 'flex';    
+//darkmode event
+darkModeToggle.addEventListener('click', () => {
+    console.log(darkModeToggle);
+    darkMode = localStorage.getItem('darkmode');     
+    if (darkMode !== 'enabled') {  
+        disableLightMode();
+        enableDarkMode();
+        imgSegunTheme();
+    }       
 })
 
-var botonStop = document.getElementById("stop");
-botonStop.addEventListener('click', function () {
-    botonRecording.style.display = 'none';
+//lightmode event
+lightModeToggle.addEventListener('click', () => {
+    lightMode = localStorage.getItem('lightmode');     
+    if (lightMode !== 'enabled') {
+        disableDarkMode();         
+        enableLightMode();
+        imgSegunTheme();
+    } 
 })
-
 
 function imgSegunTheme() {
 
@@ -84,26 +106,6 @@ function imgSegunTheme() {
 
 imgSegunTheme();
 
-// function getRecordImg() {
-//     let camara = document.getElementById('img-camara');
-//     let theme = document.body.getAttribute('class');
-//     console.log(theme);
 
-//     fetch(`./Img/recording_${theme}.svg`)
-//     .then(function(response) {
-//         if(!response.ok){
-//             throw new Error('HTTP error, status = ' + response.status);
-//         }
-//     return response.blob();
-//         })
-//     .then(function(miBlob) {
-//         console.log(miBlob)
-//     var objectURL = URL.createObjectURL(miBlob);
-//     camara.src = objectURL;
-//         })
-//     .catch(  error => {
-//         console.log(error.message);
-//     });   
-// }
 
 

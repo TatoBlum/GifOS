@@ -649,16 +649,12 @@ i.fas.fa-search {
           align-items: center;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin-left: 25px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  align-items: center;
 }
 
 #header {
@@ -668,7 +664,6 @@ i.fas.fa-search {
 .contenedor-header-video {
   width: 90vw;
   position: relative;
-  left: 60px;
 }
 
 .crear-gifos-intro {
@@ -777,7 +772,6 @@ i.fas.fa-search {
   align-items: center;
   text-align: center;
   background: var(--clr-background-box-gris);
-  /* color: var(--fnt-color); */
 }
 
 .boton-crear-gif::-webkit-input-placeholder {
@@ -1097,6 +1091,22 @@ i.fas.fa-search {
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.contenedor-de-guifos-creados {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 20px;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: dense;
+  gap: 0.625em;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 50px;
+}
+
+.link-mis-gifos {
+  width: 30%;
 }
 
 .sugerencias-de-busqueda {
